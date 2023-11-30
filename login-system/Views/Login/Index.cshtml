@@ -1,0 +1,36 @@
+﻿@model UserModel
+@{
+    Layout = "_LayoutEmpty";
+    ViewData["Title"] = "Entrar na sua conta";
+}
+
+<div class="center">
+    <div class="form-container">
+        <div>
+            <img src="~/image/logo.png" alt="Logo" width="140" height="130">
+        </div>
+        <br>
+        @if (TempData["ErrorMessage"] != null)
+        {
+            <div class="alert alert-danger" role="alert">
+                <button type="button" class="btn btn-danger btn-sm close-alert" data-bs-dismiss="alert" arial-label="Close">X</button>
+                @TempData["ErrorMessage"]
+            </div>
+        }
+        <br>
+        <form asp-controller="Login" asp-action="Access" method="post">
+            <div class="form-floating">
+                <input asp-for="Email" type="text" class="form-control" placeholder="Nome De Usuario">
+                <label for="floatingInput">Digite seu nome E-mail</label>
+            </div>
+            <div class="form-floating">
+                <input asp-for="Password" type="password" class="form-control" placeholder="Senha">
+                <label for="floatingPassword">Digite sua Senha</label>
+            </div>
+            <button type="submit" class="btn btn-primary">Entrar</button>
+            <div align=center>
+                <a asp-controller="Home" asp-action="Index" style="text-decoration:none">Voltar</a>
+            </div>
+        </form>
+    </div>
+</div>

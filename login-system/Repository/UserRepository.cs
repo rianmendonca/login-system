@@ -18,5 +18,10 @@ namespace login_system.Repository
             _context.SaveChanges();
             return user;
         }
+
+        public UserModel SearchUser(string email)
+        { 
+            return _context.Users.FirstOrDefault(x => x.Email == email);
+        }
     }
 }
