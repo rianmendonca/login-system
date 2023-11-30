@@ -48,3 +48,12 @@ a {
     font-size: 18px;
     font-weight: bold;
 }
+
+.close-alert {
+    position: absolute;
+    right: -10px;
+    top: -15px;
+    border-radius: 15px;
+    width: 30px;
+    height: 30px
+}
