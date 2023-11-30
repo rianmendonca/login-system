@@ -16,3 +16,25 @@ html {
 body {
   margin-bottom: 60px;
 }
+
+img {
+    margin-left: 180px;
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.form-container {
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 40px;
+    width: 600px;
+}
+
+.form-floating {
+    margin-bottom: 15px;
+}

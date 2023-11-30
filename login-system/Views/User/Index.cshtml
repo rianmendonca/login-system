@@ -1,0 +1,32 @@
+﻿@{
+    Layout = "_LayoutEmpty";
+    ViewData["Title"] = "Cadastrar-se";
+}
+
+<div class="center">
+    <div class="form-container">
+        <form asp-controller="" asp-action="" method="post">
+            <div>
+                <img src="~/image/logo.png" alt="Logo" width="130" height="130">
+            </div>
+            <br>
+            <div class="mb-3">
+                <label for="inputNome" class="form-label">Nome</label>
+                <input class="form-control" id="inputNome" placeholder="Digite seu nome">
+            </div>
+            <div class="mb-3">
+                <label for="inputEmail" class="form-label">Email</label>
+                <input class="form-control" id="inputEmail" placeholder="Digite seu e-mail">
+            </div>
+            <div class="mb-3">
+                <label for="inputSenha" class="form-label">Senha</label>
+                <input type="password" class="form-control" id="inputSenha" placeholder="Digite sua senha">
+            </div>
+            <button type="submit" class="btn btn-primary">Confirmar</button>
+            <br>
+            <div align=center>
+                <a asp-controller="Home" asp-action="Index">Voltar</a>
+            </div>
+        </form>
+    </div>
+</div>
