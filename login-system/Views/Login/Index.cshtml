@@ -1,4 +1,4 @@
-﻿@model UserModel
+﻿@model LoginModel
 @{
     Layout = "_LayoutEmpty";
     ViewData["Title"] = "Entrar na sua conta";
@@ -20,16 +20,16 @@
         <br>
         <form asp-controller="Login" asp-action="Access" method="post">
             <div class="form-floating">
-                <input asp-for="Email" type="text" class="form-control" placeholder="Nome De Usuario">
+                <input asp-for="Email" type="text" class="form-control" placeholder="Email">
                 <label for="floatingInput">Digite seu nome E-mail</label>
             </div>
             <div class="form-floating">
-                <input asp-for="Password" type="password" class="form-control" placeholder="Senha">
+                <input asp-for="Password" type="password" class="form-control" placeholder="Password">
                 <label for="floatingPassword">Digite sua Senha</label>
             </div>
             <button type="submit" class="btn btn-primary">Entrar</button>
             <div align=center>
-                <a asp-controller="Home" asp-action="Index" style="text-decoration:none">Voltar</a>
+                <a asp-controller="User" asp-action="Index" style="text-decoration:none">Não possui conta, clique aqui</a>
             </div>
         </form>
     </div>

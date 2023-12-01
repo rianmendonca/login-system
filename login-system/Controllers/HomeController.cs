@@ -1,9 +1,11 @@
-﻿using login_system.Models;
+﻿using login_system.Filters;
+using login_system.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 
 namespace login_system.Controllers
 {
+    [PageForLoggedInUser]
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;

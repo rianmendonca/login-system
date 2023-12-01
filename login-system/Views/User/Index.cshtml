@@ -27,14 +27,17 @@
                     @TempData["ErrorMessage"]
                 </div>
             }
-
+            <div class="mb-3">
+                <label for="inputName" class="form-label">Nome</label>
+                <input asp-for="Name" type="text" class="form-control" id="inputName" placeholder="Digite seu nome">
+            </div>
             <div class="mb-3">
                 <label for="inputEmail" class="form-label">Email</label>
                 <input asp-for="Email" type="text" class="form-control" id="inputEmail" placeholder="Digite seu e-mail">
             </div>
             <div class="mb-3">
-                <label for="inputSenha" class="form-label">Senha</label>
-                <input asp-for="Password" type="password" class="form-control" id="inputSenha" placeholder="Digite sua senha">
+                <label for="inputPassword" class="form-label">Senha</label>
+                <input asp-for="Password" type="password" class="form-control" id="inputPassword" placeholder="Digite sua senha">
             </div>
             <button type="submit" class="btn btn-primary">Confirmar</button>
             <br>
