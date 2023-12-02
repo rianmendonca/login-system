@@ -10,6 +10,13 @@
             <img src="~/image/logo.png" alt="Logo" width="140" height="130">
         </div>
         <br>
+        @if (TempData["SuccessMessage"] != null)
+        {
+            <div class="alert alert-success" role="alert">
+                <button type="button" class="btn btn-danger btn-sm close-alert" data-bs-dismiss="alert" arial-label="Close">X</button>
+                @TempData["SuccessMessage"]
+            </div>
+        }
         @if (TempData["ErrorMessage"] != null)
         {
             <div class="alert alert-danger" role="alert">
@@ -17,7 +24,6 @@
                 @TempData["ErrorMessage"]
             </div>
         }
-        <br>
         <form asp-controller="Login" asp-action="Access" method="post">
             <div class="form-floating">
                 <input asp-for="Email" type="text" class="form-control" placeholder="Email">
@@ -28,7 +34,6 @@
                 <input asp-for="Password" type="password" class="form-control" placeholder="Password">
                 <label for="floatingPassword">Digite sua Senha</label>
                 @Html.ValidationMessageFor(x => x.Password, null, new { @class = "erro-message" })
-
             </div>
             <button type="submit" class="btn btn-primary">Entrar</button>
             <div align=center>

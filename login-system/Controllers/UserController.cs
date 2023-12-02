@@ -27,10 +27,10 @@ namespace login_system.Controllers
                 {
                     user = _userRepository.RegisterUser(user);
 
-                    TempData["SuccessMessage"] = "Cadastro realizado com sucesso!";
-                    return View("Index");
+                    TempData["SuccessMessage"] = "Cadastro realizado com sucesso, realize o login";
+                    return RedirectToAction("Index", "Login");
                 }
-                return View();
+                return View("Index");
             }
             catch (Exception erro)
             {
