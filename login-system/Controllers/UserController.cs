@@ -30,7 +30,7 @@ namespace login_system.Controllers
                     TempData["SuccessMessage"] = "Cadastro realizado com sucesso!";
                     return View("Index");
                 }
-                return View(user);
+                return View();
             }
             catch (Exception erro)
             {

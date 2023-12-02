@@ -30,14 +30,20 @@
             <div class="mb-3">
                 <label for="inputName" class="form-label">Nome</label>
                 <input asp-for="Name" type="text" class="form-control" id="inputName" placeholder="Digite seu nome">
+                @Html.ValidationMessageFor(x => x.Name, null, new { @class = "erro-message" })
+
             </div>
             <div class="mb-3">
                 <label for="inputEmail" class="form-label">Email</label>
                 <input asp-for="Email" type="text" class="form-control" id="inputEmail" placeholder="Digite seu e-mail">
+                @Html.ValidationMessageFor(x => x.Email, null, new { @class = "erro-message" })
+
             </div>
             <div class="mb-3">
                 <label for="inputPassword" class="form-label">Senha</label>
                 <input asp-for="Password" type="password" class="form-control" id="inputPassword" placeholder="Digite sua senha">
+                @Html.ValidationMessageFor(x => x.Password, null, new { @class = "erro-message" })
+
             </div>
             <button type="submit" class="btn btn-primary">Confirmar</button>
             <br>

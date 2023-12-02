@@ -22,10 +22,13 @@
             <div class="form-floating">
                 <input asp-for="Email" type="text" class="form-control" placeholder="Email">
                 <label for="floatingInput">Digite seu nome E-mail</label>
+                @Html.ValidationMessageFor(x => x.Email, null, new { @class = "erro-message" })
             </div>
             <div class="form-floating">
                 <input asp-for="Password" type="password" class="form-control" placeholder="Password">
                 <label for="floatingPassword">Digite sua Senha</label>
+                @Html.ValidationMessageFor(x => x.Password, null, new { @class = "erro-message" })
+
             </div>
             <button type="submit" class="btn btn-primary">Entrar</button>
             <div align=center>
