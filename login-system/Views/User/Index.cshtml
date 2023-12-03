@@ -7,38 +7,31 @@
 
 <div class="center">
     <div class="form-container">
-        <form asp-controller="User" asp-action="RegisterUser" method="post">
-            <div>
-                <img src="~/image/logo.png" alt="Logo" width="140" height="130">
+        <div>
+            <img src="~/image/logo.png" alt="Logo" width="140" height="130">
+        </div>
+        <br>
+        @if (TempData["ErrorMessage"] != null)
+        {
+            <div class="alert alert-danger">
+                @TempData["ErrorMessage"]
             </div>
-            <br>
-            @if (TempData["SuccessMessage"] != null)
-            {
-                <div class="alert alert-success" role="alert">
-                    <button type="button" class="btn btn-danger btn-sm close-alert" data-bs-dismiss="alert" arial-label="Close">X</button>
-                    @TempData["SuccessMessage"]
-                </div>
-            }
-            @if (TempData["ErrorMessage"] != null)
-            {
-                <div class="alert alert-danger" role="alert">
-                    <button type="button" class="btn btn-danger btn-sm close-alert" data-bs-dismiss="alert" arial-label="Close">X</button>
-                    @TempData["ErrorMessage"]
-                </div>
-            }
-            <div class="mb-3">
-                <label for="inputName" class="form-label">Nome</label>
-                <input asp-for="Name" type="text" class="form-control" id="inputName" placeholder="Digite seu nome">
+        }
+        <form asp-controller="User" asp-action="RegisterUser" method="post">
+            <h3 align=center>Cadastre-se</h3>
+            <div class="form-floating">
+                <input asp-for="Name" type="text" class="form-control" placeholder="Nome">
+                <label for="floatingName">Digite sua Nome</label>
                 @Html.ValidationMessageFor(x => x.Name, null, new { @class = "erro-message" })
             </div>
-            <div class="mb-3">
-                <label for="inputEmail" class="form-label">Email</label>
-                <input asp-for="Email" type="text" class="form-control" id="inputEmail" placeholder="Digite seu e-mail">
+            <div class="form-floating">
+                <input asp-for="Email" type="text" class="form-control" placeholder="Email">
+                <label for="floatingInput">Digite seu E-mail</label>
                 @Html.ValidationMessageFor(x => x.Email, null, new { @class = "erro-message" })
             </div>
-            <div class="mb-3">
-                <label for="inputPassword" class="form-label">Senha</label>
-                <input asp-for="Password" type="password" class="form-control" id="inputPassword" placeholder="Digite sua senha">
+            <div class="form-floating">
+                <input asp-for="Password" type="password" class="form-control" placeholder="Senha">
+                <label for="floatingPassword">Digite sua Senha</label>
                 @Html.ValidationMessageFor(x => x.Password, null, new { @class = "erro-message" })
             </div>
             <button type="submit" class="btn btn-primary">Confirmar</button>

@@ -12,22 +12,21 @@
         <br>
         @if (TempData["SuccessMessage"] != null)
         {
-            <div class="alert alert-success" role="alert">
-                <button type="button" class="btn btn-danger btn-sm close-alert" data-bs-dismiss="alert" arial-label="Close">X</button>
+            <div class="alert alert-success">
                 @TempData["SuccessMessage"]
             </div>
         }
         @if (TempData["ErrorMessage"] != null)
         {
-            <div class="alert alert-danger" role="alert">
-                <button type="button" class="btn btn-danger btn-sm close-alert" data-bs-dismiss="alert" arial-label="Close">X</button>
+            <div class="alert alert-danger">
                 @TempData["ErrorMessage"]
             </div>
         }
         <form asp-controller="Login" asp-action="Access" method="post">
+            <h3 align=center>Fazer Login</h3>
             <div class="form-floating">
                 <input asp-for="Email" type="text" class="form-control" placeholder="Email">
-                <label for="floatingInput">Digite seu nome E-mail</label>
+                <label for="floatingInput">Digite seu E-mail</label>
                 @Html.ValidationMessageFor(x => x.Email, null, new { @class = "erro-message" })
             </div>
             <div class="form-floating">
@@ -37,7 +36,7 @@
             </div>
             <button type="submit" class="btn btn-primary">Entrar</button>
             <div align=center>
-                <a asp-controller="User" asp-action="Index" style="text-decoration:none">Não possui conta, clique aqui</a>
+                <a asp-controller="User" asp-action="Index" style="text-decoration:none">Não possui conta? Cadastre-se</a>
             </div>
         </form>
     </div>

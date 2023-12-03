@@ -41,14 +41,14 @@ namespace login_system.Controllers
 
                     }
 
-                    TempData["ErrorMessage"] = "E-mail e/ou senha inválidos(s), tente novamente";
+                    TempData["ErrorMessage"] = "E-mail e/ou senha inválidos(s), tente novamente.";
                 }
 
                 return View("Index");
             }
             catch (Exception erro)
             {
-                TempData["ErrorMessage"] = $"Não foi possível realizar o login, tente novamente, datalhe do erro: {erro.Message}";
+                TempData["ErrorMessage"] = $"Não foi possível realizar o login, tente novamente, datalhe do erro: {erro.Message}.";
                 return RedirectToAction("Index");
             }
         }

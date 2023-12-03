@@ -27,14 +27,14 @@ namespace login_system.Controllers
                 {
                     user = _userRepository.RegisterUser(user);
 
-                    TempData["SuccessMessage"] = "Cadastro realizado com sucesso, realize o login";
+                    TempData["SuccessMessage"] = "Cadastro realizado com sucesso, realize o login.";
                     return RedirectToAction("Index", "Login");
                 }
                 return View("Index");
             }
             catch (Exception erro)
             {
-                TempData["ErrorMessage"] = $"Não foi possivel realizar o cadastro, detalhe do erro: {erro.Message}";
+                TempData["ErrorMessage"] = $"Não foi possivel realizar o cadastro, detalhe do erro: {erro.Message}.";
                 return RedirectToAction("Index");
             }
         }
