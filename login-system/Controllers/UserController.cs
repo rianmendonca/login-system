@@ -27,7 +27,7 @@ namespace login_system.Controllers
                 {
                     user = _userRepository.RegisterUser(user);
 
-                    TempData["SuccessMessage"] = "Cadastro realizado com sucesso.";
+                    TempData["SuccessMessage"] = "Cadastro realizado com sucesso, realize login.";
                     return RedirectToAction("Index", "Login");
                 }
                 return View("Index");
@@ -37,6 +37,11 @@ namespace login_system.Controllers
                 TempData["ErrorMessage"] = $"Não foi possivel realizar o cadastro, detalhe do erro: {erro.Message}.";
                 return RedirectToAction("Index");
             }
+        }
+
+        public IActionResult MyData()
+        {
+            return View();
         }
     }
 }

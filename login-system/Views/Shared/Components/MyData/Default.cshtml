@@ -1,0 +1,15 @@
+﻿@model UserModel
+
+@{
+    ViewData["Title"] = "Meu Cadastro";
+}
+<div class="data">
+    <h3 align=center>Meus Dados</h3>
+    <br>
+    <p>Nome: @Model.Name</p>
+    <p>E-mail: @Model.Email</p>
+    <p>Senha: ********</p>
+    <div align=center>
+        <a asp-controller="" asp-action="" style="text-decoration:none">Alterar cadastro</a>
+    </div>
+</div>
