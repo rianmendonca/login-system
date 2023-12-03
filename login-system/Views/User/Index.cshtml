@@ -23,17 +23,17 @@
             <div class="form-floating">
                 <input asp-for="Name" type="text" class="form-control" placeholder="Nome">
                 <label for="floatingName">Digite sua Nome</label>
-                @Html.ValidationMessageFor(x => x.Name, null, new { @class = "erro-message" })
+                @Html.ValidationMessageFor(x => x.Name, null, new { @class = "red-text" })
             </div>
             <div class="form-floating">
                 <input asp-for="Email" type="text" class="form-control" placeholder="Email">
                 <label for="floatingInput">Digite seu E-mail</label>
-                @Html.ValidationMessageFor(x => x.Email, null, new { @class = "erro-message" })
+                @Html.ValidationMessageFor(x => x.Email, null, new { @class = "red-text" })
             </div>
             <div class="form-floating">
                 <input asp-for="Password" type="password" class="form-control" placeholder="Senha">
                 <label for="floatingPassword">Digite sua Senha</label>
-                @Html.ValidationMessageFor(x => x.Password, null, new { @class = "erro-message" })
+                @Html.ValidationMessageFor(x => x.Password, null, new { @class = "red-text" })
             </div>
             <button type="submit" class="btn btn-primary">Confirmar</button>
             <br>

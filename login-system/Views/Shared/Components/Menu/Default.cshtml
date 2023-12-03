@@ -5,12 +5,17 @@
     <span class="navbar-toggler-icon"></span>
 </button>
 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-    <ul class="navbar-nav flex-grow-1">
-        <li class="candara">
-            <a class="nav-link text-dark" asp-area="" asp-controller="" asp-action="">Olá, @Model.Name</a>
-        </li>
-    </ul>
-    <div class="navbar-brand">
-        <a class="navbar-brand" asp-area="" asp-controller="Login" asp-action="EndSession">Sair</a>
+    <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+        <ul class="navbar-nav flex-grow-1">
+            <li>
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Opções
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                    <a class="dropdown-item" asp-area="" asp-controller="" asp-action="">Meu Cadastro</a>
+                    <a class="dropdown-item red-text" asp-area="" asp-controller="Login" asp-action="EndSession">Sair</a>
+                </div>
+            </li>
+        </ul>
     </div>
 </div>
