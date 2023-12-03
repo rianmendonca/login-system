@@ -10,15 +10,16 @@
         <div>
             <img src="~/image/logo.png" alt="Logo" width="140" height="130">
         </div>
-        <br>
-        @if (TempData["ErrorMessage"] != null)
-        {
-            <div class="alert alert-danger">
-                @TempData["ErrorMessage"]
-            </div>
-        }
         <form asp-controller="User" asp-action="RegisterUser" method="post">
+            <br>
             <h3 align=center>Cadastre-se</h3>
+            <br>
+            @if (TempData["ErrorMessage"] != null)
+            {
+                <div class="alert alert-danger">
+                    @TempData["ErrorMessage"]
+                </div>
+            }
             <div class="form-floating">
                 <input asp-for="Name" type="text" class="form-control" placeholder="Nome">
                 <label for="floatingName">Digite sua Nome</label>

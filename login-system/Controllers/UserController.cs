@@ -27,7 +27,7 @@ namespace login_system.Controllers
                 {
                     user = _userRepository.RegisterUser(user);
 
-                    TempData["SuccessMessage"] = "Cadastro realizado com sucesso, realize o login.";
+                    TempData["SuccessMessage"] = "Cadastro realizado com sucesso.";
                     return RedirectToAction("Index", "Login");
                 }
                 return View("Index");

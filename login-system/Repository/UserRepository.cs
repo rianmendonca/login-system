@@ -14,6 +14,7 @@ namespace login_system.Repository
 
         public UserModel RegisterUser(UserModel user)
         {
+            user.SetPasswordHash();
             _context.Users.Add(user);
             _context.SaveChanges();
             return user;

@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using login_system.Helper;
+using System.ComponentModel.DataAnnotations;
 
 namespace login_system.Models
 {
@@ -21,7 +22,12 @@ namespace login_system.Models
 
         public bool ValidatePassword(string password)
         {
-            return Password.Equals(password);
+            return Password.Equals(password.GenerateHash());
+        }
+
+        public void SetPasswordHash()
+        {
+            Password = Password.GenerateHash();
         }
     }
 }
