@@ -21,8 +21,31 @@ namespace login_system.Repository
         }
 
         public UserModel SearchUser(string email)
-        { 
+        {
             return _context.Users.FirstOrDefault(x => x.Email == email);
+        }
+
+        public UserModel SearchById(int id)
+        {
+            return _context.Users.FirstOrDefault(x => x.Id == id);
+        }
+
+        public UserModel ChangePassword(ChangePasswordModel changePasswordModel)
+        {
+            UserModel user = SearchById(changePasswordModel.Id);
+
+            if (user == null) throw new Exception("Houve um erro na alteração de senha.");
+
+            if (!user.ValidatePassword(changePasswordModel.CurrentPassword)) throw new Exception("Senha atual não confere.");
+
+            if (user.ValidatePassword(changePasswordModel.NewPassword)) throw new Exception("Nova senha deve ser diferente da atual.");
+
+            user.SetNewSenha(changePasswordModel.NewPassword);
+
+            _context.Users.Update(user);
+            _context.SaveChanges();
+
+            return user;
         }
     }
 }

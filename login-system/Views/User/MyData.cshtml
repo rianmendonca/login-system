@@ -3,5 +3,15 @@
 @{
     ViewData["Title"] = "Meu cadastro";
 }
-
-@await Component.InvokeAsync("MyData")
+<div class="data">
+    <h3 align=center>Meus Dados</h3>
+    <br>
+    @if (TempData["SuccessMessage"] != null)
+    {
+        <div class="alert alert alert-success" role="alert">
+            <button type="button" class="btn btn-danger btn-sm close-alert" data-bs-dismiss="alert" arial-label="Close">X</button>
+            @TempData["SuccessMessage"]
+        </div>
+    }
+    @await Component.InvokeAsync("MyData")
+</div>

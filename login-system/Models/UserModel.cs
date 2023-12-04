@@ -29,5 +29,11 @@ namespace login_system.Models
         {
             Password = Password.GenerateHash();
         }
+
+        public void SetNewSenha(string newPassword)
+        {
+            Password = newPassword.GenerateHash();
+        }
+
     }
 }

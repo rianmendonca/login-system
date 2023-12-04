@@ -1,7 +1,6 @@
 ﻿using login_system.Helper;
 using login_system.Models;
 using Microsoft.AspNetCore.Mvc;
-using Newtonsoft.Json;
 
 namespace login_system.ViewComponents
 {

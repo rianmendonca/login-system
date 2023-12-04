@@ -48,7 +48,7 @@ namespace login_system.Controllers
             }
             catch (Exception erro)
             {
-                TempData["ErrorMessage"] = $"Não foi possível realizar o login, tente novamente, datalhe do erro: {erro.Message}.";
+                TempData["ErrorMessage"] = $"Não foi possível realizar o login, tente novamente, datalhe do erro: {erro.Message}";
                 return RedirectToAction("Index");
             }
         }
