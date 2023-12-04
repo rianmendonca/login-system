@@ -64,7 +64,7 @@ namespace login_system.Controllers
                 {
                     _userRepository.ChangePassword(changePasswordModel);
                     TempData["SuccessMessage"] = "Senha alterada com sucesso.";
-                    return RedirectToAction("MyData", "User", changePasswordModel);
+                    return RedirectToAction("MyData", "User", new { id = changePasswordModel.Id });
                 }
 
                 return View("ChangePasswordScreen", changePasswordModel);
