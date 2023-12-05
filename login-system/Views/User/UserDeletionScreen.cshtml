@@ -1,0 +1,23 @@
+﻿@model UserModel
+
+@{
+    Layout = "_LayoutEmpty";
+    ViewData["Title"] = "Excluir conta";
+}
+
+<div class="center">
+    <div class="form-container">
+        <div>
+            <img src="~/image/logo.png" alt="Logo da empresa" width="140" height="130">
+        </div>
+        <br>
+        <p align="center">Deseja realmente excluir sua conta?</p>
+        <p align="center">@Model.Name</p>
+        <br>
+        <div align=center>
+            <a asp-controller="User" asp-action="UserDeletion" asp-route-id="@Model.Id" class="btn btn-success">Confirmar</a>
+            <a asp-controller="User" asp-action="MyData" class="btn btn-danger">Cancelar</a>
+        </div>
+        <br>
+    </div>
+</div>

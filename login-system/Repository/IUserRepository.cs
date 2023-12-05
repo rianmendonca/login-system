@@ -11,5 +11,7 @@ namespace login_system.Repository
         UserModel SearchById(int id);
 
         UserModel ChangePassword(ChangePasswordModel changePasswordModel);
+
+        bool DeleteUser(int id);
     }
 }

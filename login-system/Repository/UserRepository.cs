@@ -20,6 +20,18 @@ namespace login_system.Repository
             return user;
         }
 
+        public bool DeleteUser(int id)
+        {
+            UserModel user = SearchById(id);
+
+            if (user == null) throw new Exception("Houve um erro na exclusão do cadastro.");
+
+            _context.Users.Remove(user);
+            _context.SaveChanges();
+
+            return true;
+        }
+
         public UserModel SearchUser(string email)
         {
             return _context.Users.FirstOrDefault(x => x.Email == email);

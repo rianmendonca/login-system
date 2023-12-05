@@ -75,5 +75,35 @@ namespace login_system.Controllers
                 return View("ChangePasswordScreen", changePasswordModel);
             }
         }
+
+        public IActionResult UserDeletionScreen()
+        {
+            UserModel user = _userSession.SearchSession();
+
+            if (user == null)
+            {
+                return RedirectToAction("MyData", "User");
+            }
+
+            return View(user);
+        }
+
+        public IActionResult UserDeletion(int id)
+        {
+            try
+            {
+                _userRepository.DeleteUser(id);
+                _userSession.RemoveSession();
+
+                TempData["SuccessMessage"] = "Conta excluída com sucesso.";
+                return RedirectToAction("Index", "Login");
+            }
+            catch (Exception error)
+            {
+                TempData["ErrorMessage"] = $"Não foi possivel excluir a conta, {error.Message}";
+                return View("MyData");
+            }
+        }
     }
 }
+

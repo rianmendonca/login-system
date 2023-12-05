@@ -13,5 +13,12 @@
             @TempData["SuccessMessage"]
         </div>
     }
+    @if (TempData["ErrorMessage"] != null)
+    {
+        <div class="alert alert-danger" role="alert">
+            <button type="button" class="btn btn-danger btn-sm close-alert" data-bs-dismiss="alert" arial-label="Close">X</button>
+            @TempData["ErrorMessage"]
+        </div>
+    }
     @await Component.InvokeAsync("MyData")
 </div>
