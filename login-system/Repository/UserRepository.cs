@@ -24,7 +24,7 @@ namespace login_system.Repository
         {
             UserModel user = SearchById(id);
 
-            if (user == null) throw new Exception("Houve um erro na exclusão do cadastro.");
+            if (user == null) throw new Exception("Houve um erro na exclusão da conta, tente novamente.");
 
             _context.Users.Remove(user);
             _context.SaveChanges();
@@ -46,7 +46,7 @@ namespace login_system.Repository
         {
             UserModel user = SearchById(changePasswordModel.Id);
 
-            if (user == null) throw new Exception("Houve um erro na alteração de senha.");
+            if (user == null) throw new Exception("Houve um erro na alteração de senha, tente novamente.");
 
             if (!user.ValidatePassword(changePasswordModel.CurrentPassword)) throw new Exception("Senha atual não confere.");
 

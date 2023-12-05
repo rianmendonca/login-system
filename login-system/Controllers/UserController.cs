@@ -37,14 +37,21 @@ namespace login_system.Controllers
             }
             catch (Exception error)
             {
-                TempData["ErrorMessage"] = $"Não foi possivel realizar o cadastro, detalhe do erro: {error.Message}.";
+                TempData["ErrorMessage"] = $"{error.Message}.";
                 return RedirectToAction("Index");
             }
         }
 
         public IActionResult MyData()
         {
-            return View();
+            UserModel user = _userSession.SearchSession();
+
+            if (user == null)
+            {
+                return RedirectToAction("Index", "Home");
+            }
+
+            return View(user);
         }
 
         public IActionResult ChangePasswordScreen()
@@ -71,7 +78,7 @@ namespace login_system.Controllers
             }
             catch (Exception error)
             {
-                TempData["ErrorMessage"] = $"Não foi possivel alterar a senha, detalhe do erro: {error.Message}";
+                TempData["ErrorMessage"] = $"{error.Message}";
                 return View("ChangePasswordScreen", changePasswordModel);
             }
         }
@@ -100,7 +107,7 @@ namespace login_system.Controllers
             }
             catch (Exception error)
             {
-                TempData["ErrorMessage"] = $"Não foi possivel excluir a conta, {error.Message}";
+                TempData["ErrorMessage"] = $"{error.Message}";
                 return View("MyData");
             }
         }

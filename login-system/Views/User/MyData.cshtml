@@ -20,5 +20,10 @@
             @TempData["ErrorMessage"]
         </div>
     }
-    @await Component.InvokeAsync("MyData")
+    <p>Nome: @Model.Name</p>
+    <p>E-mail: @Model.Email</p>
+    <p>Senha: ********</p>
+    <a asp-area="" asp-controller="User" asp-action="ChangePasswordScreen" style="text-decoration:none">Alterar senha</a>
+    <br>
+    <a asp-area="" asp-controller="User" asp-action="UserDeletionScreen" style="text-decoration:none">Excluir conta</a>
 </div>
