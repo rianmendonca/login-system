@@ -54,13 +54,13 @@ namespace login_system.Controllers
             return View(user);
         }
 
-        public IActionResult ChangePasswordScreen()
+        public IActionResult ChangePassword()
         {
             return View();
         }
 
         [HttpPost]
-        public IActionResult ChangePassword(ChangePasswordModel changePasswordModel)
+        public IActionResult Change(ChangePasswordModel changePasswordModel)
         {
             try
             {
@@ -74,16 +74,16 @@ namespace login_system.Controllers
                     return RedirectToAction("MyData", "User", new { id = changePasswordModel.Id });
                 }
 
-                return View("ChangePasswordScreen", changePasswordModel);
+                return View("ChangePassword", changePasswordModel);
             }
             catch (Exception error)
             {
                 TempData["ErrorMessage"] = $"{error.Message}";
-                return View("ChangePasswordScreen", changePasswordModel);
+                return View("ChangePassword", changePasswordModel);
             }
         }
 
-        public IActionResult UserDeletionScreen()
+        public IActionResult UserDeletion()
         {
             UserModel user = _userSession.SearchSession();
 
@@ -95,7 +95,7 @@ namespace login_system.Controllers
             return View(user);
         }
 
-        public IActionResult UserDeletion(int id)
+        public IActionResult Deletion(int id)
         {
             try
             {
