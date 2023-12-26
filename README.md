@@ -1,8 +1,6 @@
-# Descrição
+## Descrição
 
 Sistema de login feito em ASP.NET MVC.
-
-# Configuração e Execução do Projeto
 
 ## Requisitos
 
